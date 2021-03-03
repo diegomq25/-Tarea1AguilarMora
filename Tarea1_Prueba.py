@@ -1,8 +1,8 @@
 import pytest
-from Tarea1 import check_char, caps_switch
+from Tarea1 import check_char, caps_switch  # permite utilizar funciones de otros programas
 
 
-@pytest.mark.parametrize(
+@pytest.mark.parametrize(  # permite proponer parametros en tuplas
     "charr,resp",
     [
         ("A", 0), ("a", 0),
@@ -33,7 +33,7 @@ from Tarea1 import check_char, caps_switch
         ("Z", 0), ("z", 0)
     ])
 def test_check_char(charr, resp):
-    assert check_char(charr) == resp
+    assert check_char(charr) == resp  # se comprueban las respuestas mediante las tuplas creadas anteriormente
 
 
 @pytest.mark.parametrize(
@@ -67,9 +67,9 @@ def test_check_char(charr, resp):
         ("Z", "z"), ("z", "Z")
     ])
 def test_caps_switch(charr2, resp2):
-    assert caps_switch(charr2) == resp2
+    assert caps_switch(charr2) == resp2  # se comprueban las respuestas mediante las tuplas creadas anteriormente
 
-
+# Comprobar errores
 def test_error_b():
     assert check_char("AZ") == 0
 
